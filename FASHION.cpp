@@ -2,13 +2,6 @@
 
 using namespace std;
 
-int compare(const void *a, const void *b)
-{
-    if ( *(int*)a <  *(int*)b ) return -1;
-    if ( *(int*)a == *(int*)b ) return 0;
-    if ( *(int*)a >  *(int*)b ) return 1;
-}
-
 int main()
 {
     int t, N, maxhotness;
@@ -28,8 +21,8 @@ int main()
         {
             cin >> women[i];
         }
-        qsort(men, N, sizeof(int), compare);
-        qsort(women, N, sizeof(int), compare);
+        sort(men, men+N);
+        sort(women, women+N);
 
         for(int i = 0; i<N; i++)
         {
